@@ -13,9 +13,10 @@ export const TodoProvider = ({ children }) => {
     try {
       setLoading(true);
       const res = await axios.get(API_URL);
-      setTodos(res.data);
+      setTodos(res.data.todos || []);
     } catch (err) {
       console.error("Fetch error", err);
+      setTodos([]);
     } finally {
       setLoading(false);
     }
