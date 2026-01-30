@@ -15,8 +15,6 @@ function App() {
         <div className="mb-4">
           <TodoForm />
         </div>
-
-        {loading && <p className="text-center">Loading...</p>}
         <input
           type="text"
           placeholder="Search todos..."
@@ -26,6 +24,7 @@ function App() {
         {todos.length === 0 && (
           <p className="text-center text-gray-400">No todos found</p>
         )}
+        {loading && <p className="text-center">Loading...</p>}
 
         <div className="flex flex-wrap gap-y-3">
           {todos.map((todo) => (
