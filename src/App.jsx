@@ -19,7 +19,7 @@ function App() {
         {loading && <p className="text-center">Loading...</p>}
         <input
           type="text"
-          placeholder={`Search todos... <ion-icon name="search-outline"></ion-icon>`}
+          placeholder={`Search todos... ${<ion-icon name="search-outline"></ion-icon>}`}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full mb-4 p-2 rounded"
         />
