@@ -3,7 +3,7 @@ import { useTodo } from "./contexts";
 import "./App.css";
 
 function App() {
-  const { todos, loading } = useTodo();
+  const { todos, loading, setSearchTerm } = useTodo();
 
   return (
     <div className="bg-[rgb(49,77,119)] min-h-screen py-8 rounded-lg">
@@ -17,6 +17,15 @@ function App() {
         </div>
 
         {loading && <p className="text-center">Loading...</p>}
+        <input
+          type="text"
+          placeholder="Search todos..."
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full mb-4 p-2 rounded"
+        />
+        {todos.length === 0 && (
+          <p className="text-center text-gray-400">No todos found</p>
+        )}
 
         <div className="flex flex-wrap gap-y-3">
           {todos.map((todo) => (

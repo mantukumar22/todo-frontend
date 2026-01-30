@@ -7,6 +7,7 @@ export const TodoContext = createContext();
 
 export const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
   const fetchTodos = async () => {
@@ -41,6 +42,10 @@ export const TodoProvider = ({ children }) => {
     fetchTodos();
   };
 
+  const filteredTodos = todos.filter(todo =>
+    todo.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const toggleComplete = async (id) => {
     const todo = todos.find((t) => t._id === id);
     if (!todo) return;
@@ -54,9 +59,10 @@ export const TodoProvider = ({ children }) => {
   return (
     <TodoContext.Provider
       value={{
-        todos,
+        todos: filteredTodos,
         loading,
         addTodo,
+        setSearchTerm,
         updateTodo,
         deleteTodo,
         toggleComplete,
@@ -64,6 +70,7 @@ export const TodoProvider = ({ children }) => {
     >
       {children}
     </TodoContext.Provider>
+
   );
 };
 
