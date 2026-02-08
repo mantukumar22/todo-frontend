@@ -7,6 +7,7 @@ This is a **full-stack To-Do List application** built with **React (Vite)** for 
 - Add new tasks
 - Edit task titles
 - Delete tasks
+- Earcg tasks
 - Toggle completion status
 - Real-time updates between frontend and backend
 - Responsive UI with React and Tailwind CSS
