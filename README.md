@@ -1,5 +1,7 @@
 # To-Do List App
 
+Demo video linkedIn Post : [https://www.linkedin.com/posts/mantukumar22_reactjs-nodejs-mongodb-activity-7426276822822277120-gwxW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFIMdswBwDEA1pRPXlABuyFFVX9TivGhyL0]
+
 This is a **full-stack To-Do List application** built with **React (Vite)** for the frontend and **Node.js + Express + MongoDB** for the backend. The app allows users to **add, update, delete, and mark tasks as completed**, with data persisted in MongoDB. The app is deployed on **Netlify (frontend)** and **Render (backend)**.
 
 ## Features
